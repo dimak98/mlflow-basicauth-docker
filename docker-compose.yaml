@@ -13,8 +13,8 @@ services:
       MLFLOW_ARTIFACT_ROOT: s3://mlflow/
       AWS_ACCESS_KEY_ID: minioadmin
       AWS_SECRET_ACCESS_KEY: minioadmin
-      MLFLOW_BASIC_AUTH_USERNAME: admin  # Set up basic auth username
-      MLFLOW_BASIC_AUTH_PASSWORD: password  # Set up basic auth password
+      MLFLOW_BASIC_AUTH_USERNAME: admin
+      MLFLOW_BASIC_AUTH_PASSWORD: password
     depends_on:
       - db
       - minio

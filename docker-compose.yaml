@@ -3,8 +3,8 @@ version: '3.8'
 services:
   mlflow:
     build:
-      context: mlflow  # Points to the directory where your Dockerfile is located
-      dockerfile: Dockerfile  # Make sure this is the right path to your Dockerfile
+      context: mlflow
+      dockerfile: Dockerfile
     ports:
       - "80:5000"
     environment:

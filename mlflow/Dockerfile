@@ -5,9 +5,8 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libpq-dev \
     curl \
-    && apt-get clean
-
-RUN curl -sSL https://install.python-poetry.org | python3 - \
+    && apt-get clean \
+    && curl -sSL https://install.python-poetry.org | python3 - \
     && ln -s /root/.local/bin/poetry /usr/local/bin/poetry
 
 ARG POETRY_VIRTUALENVS_IN_PROJECT=true \
@@ -24,9 +23,8 @@ FROM python:3.10-slim AS final
 
 RUN apt-get update && apt-get install -y \
     libpq-dev \
-    && apt-get clean
-
-RUN addgroup --gid 1001 mlflow \
+    && apt-get clean \
+    && addgroup --gid 1001 mlflow \
     && adduser --uid 1001 --gid 1001 --disabled-password --gecos '' mlflow \
     && mkdir /mlflow \
     && chown -R mlflow:mlflow /mlflow
